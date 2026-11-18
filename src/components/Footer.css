@@ -1,0 +1,116 @@
+/* ER UDAY footer */
+.site-footer {
+  margin-top: 24px;
+  border-top: 1px solid var(--border);
+  background: #fbfcfd;
+}
+
+.site-footer-inner {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  column-gap: 24px;
+  row-gap: 18px;
+  padding-top: 27px;
+  padding-bottom: 22px;
+}
+
+.footer-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  width: fit-content;
+  color: var(--navy);
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.footer-brand-mark {
+  display: inline-grid;
+  place-items: center;
+  width: 31px;
+  height: 31px;
+  border-radius: 8px;
+  background: var(--navy);
+  color: #fff;
+  font-size: 0.8rem;
+  letter-spacing: -0.08em;
+}
+
+.footer-tagline {
+  grid-column: 1;
+  color: var(--text-muted);
+  font-size: 0.86rem;
+  margin-top: -12px;
+}
+
+.footer-social {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 10px 19px;
+}
+
+.footer-social a {
+  color: var(--text-muted);
+  font-size: 0.86rem;
+  font-weight: 550;
+  transition: color 0.18s ease;
+}
+
+.footer-social a:hover,
+.footer-bottom a:hover {
+  color: var(--navy);
+}
+
+.footer-social a span {
+  margin-left: 4px;
+  font-size: 0.75rem;
+}
+
+.footer-bottom {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding-top: 17px;
+  margin-top: 2px;
+  border-top: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 0.78rem;
+}
+
+.footer-bottom a {
+  color: var(--text-muted);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+@media (max-width: 560px) {
+  .site-footer-inner {
+    grid-template-columns: 1fr;
+    row-gap: 13px;
+    padding-top: 22px;
+  }
+
+  .footer-social {
+    grid-column: 1;
+    grid-row: auto;
+    justify-content: flex-start;
+    padding-top: 3px;
+  }
+
+  .footer-tagline {
+    margin-top: -7px;
+  }
+
+  .footer-bottom {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+}

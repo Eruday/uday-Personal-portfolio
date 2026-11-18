@@ -1,0 +1,124 @@
+/* Project directory styles - imported directly by ProjectCard.jsx */
+.portfolio-content .projects-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  align-items: stretch;
+  column-gap: 24px;
+  row-gap: 12px;
+}
+
+.directory-project {
+  min-width: 0;
+  border-radius: 12px;
+  transition: background-color 160ms ease, transform 160ms ease;
+}
+
+.directory-project:hover {
+  background: #f7f9fc;
+  transform: translateY(-1px);
+}
+
+.directory-project-link {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: flex-start !important;
+  gap: 12px;
+  width: 100%;
+  min-height: 92px;
+  padding: 13px 12px;
+  color: inherit;
+  text-decoration: none;
+  border-radius: 12px;
+  text-align: left;
+}
+
+.directory-project-link:focus-visible {
+  outline: 2px solid #0b2d50;
+  outline-offset: 2px;
+}
+
+.directory-icon {
+  display: grid !important;
+  place-items: center;
+  flex: 0 0 40px;
+  width: 40px;
+  height: 40px;
+  border-radius: 11px;
+  font-size: 21px;
+  line-height: 1;
+}
+
+.directory-copy {
+  display: flex !important;
+  flex: 1 1 auto;
+  flex-direction: column !important;
+  align-items: flex-start;
+  min-width: 0;
+  gap: 4px;
+}
+
+.directory-name {
+  display: block !important;
+  color: #171717;
+  font-size: 16px;
+  font-weight: 650;
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+}
+
+.directory-description {
+  display: block !important;
+  color: #77736f;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.directory-arrow {
+  flex: 0 0 auto;
+  margin: 1px 2px 0 0;
+  color: #315879;
+  font-size: 16px;
+  opacity: 0;
+  transition: opacity 160ms ease, transform 160ms ease;
+}
+
+.directory-project:hover .directory-arrow {
+  opacity: 1;
+  transform: translate(2px, -2px);
+}
+
+.directory-project-disabled {
+  cursor: default;
+}
+
+.directory-github {
+  display: inline-block;
+  margin: -4px 0 10px 64px;
+  color: #0b2d50;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+@media (max-width: 760px) {
+  .portfolio-content .projects-grid {
+    grid-template-columns: 1fr !important;
+    row-gap: 5px;
+  }
+
+  .directory-project-link {
+    min-height: 78px;
+  }
+
+  .directory-arrow {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .directory-project,
+  .directory-arrow {
+    transition: none;
+  }
+}

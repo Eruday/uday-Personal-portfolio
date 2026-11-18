@@ -1,40 +1,60 @@
+import './ProjectCard.css'
+
 function ProjectCard({ project }) {
-  const { name, description, image, category, technologies, liveUrl, githubUrl } =
-    project
+  const {
+    name,
+    description,
+    icon = '✦',
+    iconBackground = '#eaf0f6',
+    liveUrl,
+    githubUrl,
+  } = project
+
+  const details = (
+    <>
+      <span
+        className="directory-icon"
+        style={{ backgroundColor: iconBackground }}
+        aria-hidden="true"
+      >
+        {icon}
+      </span>
+      <span className="directory-copy">
+        <span className="directory-name">{name}</span>
+        <span className="directory-description">{description}</span>
+      </span>
+      {liveUrl && <span className="directory-arrow" aria-hidden="true">↗</span>}
+    </>
+  )
 
   return (
-    <article className="project-card">
-      <div className="project-card-image">
-        <img src={image} alt={`${name} screenshot`} loading="lazy" />
-      </div>
-
-      <div className="project-card-body">
-        {category && <span className="project-card-category">{category}</span>}
-
-        <h3 className="project-card-name">{name}</h3>
-        <p className="project-card-description">{description}</p>
-
-        {technologies && technologies.length > 0 && (
-          <ul className="project-card-tags">
-            {technologies.map((tech) => (
-              <li key={tech}>{tech}</li>
-            ))}
-          </ul>
-        )}
-
-        <div className="project-card-links">
-          {liveUrl && (
-            <a href={liveUrl} target="_blank" rel="noopener noreferrer">
-              Live site
-            </a>
-          )}
-          {githubUrl && (
-            <a href={githubUrl} target="_blank" rel="noopener noreferrer">
-              GitHub
-            </a>
-          )}
+    <article className="directory-project">
+      {liveUrl ? (
+        <a
+          className="directory-project-link"
+          href={liveUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`Visit ${name} website`}
+        >
+          {details}
+        </a>
+      ) : (
+        <div className="directory-project-link directory-project-disabled">
+          {details}
         </div>
-      </div>
+      )}
+
+      {githubUrl && (
+        <a
+          className="directory-github"
+          href={githubUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub ↗
+        </a>
+      )}
     </article>
   )
 }

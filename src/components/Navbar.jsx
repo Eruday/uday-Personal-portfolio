@@ -7,9 +7,10 @@ const links = [
 function Navbar() {
   return (
     <header className="navbar">
-      <nav className="container navbar-inner" aria-label="Main">
-        <a href="#" className="navbar-logo">
-          Uday
+      <nav className="container navbar-inner" aria-label="Main navigation">
+        <a href="#" className="navbar-logo" aria-label="ER UDAY home">
+          <span className="navbar-mark">ER</span>
+          <span className="navbar-word">UDAY</span>
         </a>
 
         <ul className="navbar-links">
